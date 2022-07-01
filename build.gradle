@@ -1,0 +1,25 @@
+plugins {
+    id 'org.springframework.boot' version '2.7.1'
+}
+apply plugin: 'java'
+apply plugin: 'io.spring.dependency-management'
+
+group 'example'
+version '0.0.1-SNAPSHOT'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-webflux'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+}
